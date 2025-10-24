@@ -1,4 +1,4 @@
-# Task D – Designing a Machine Learning System  
+# Finale – Designing a Machine Learning System  
 ### WEC Intel SIG Submission by Macklin Chriss Miranda 241MN027
 
 ---
