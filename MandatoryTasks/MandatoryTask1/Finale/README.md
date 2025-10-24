@@ -1,31 +1,73 @@
-# Designing Your Machine Learning System
+# Task D – Designing a Machine Learning System  
+### WEC Intel SIG Submission by Macklin Chriss Miranda 241MN027
 
-This is an exciting and open-ended design question that builds upon the knowledge and skills you've gained from Task A, B, and C. In this task, you'll be challenged to design a machine learning system that takes questions in English and provides answers in French.
+---
 
-## Task Overview
+## Overview
+This project is my solution for **Task D: Designing a Machine Learning System**, which builds upon the knowledge gained from **Task A, B, and C**.  
 
-This task is the culmination of your journey through Task A, B, and C. It's an opportunity for you to put your machine learning and natural language processing skills to the test. Your objective is to design a system that can intelligently understand English questions and generate accurate, contextually relevant answers in French, similar to the Question and Answering that you did in Task C.
+The objective is to **design and demonstrate a machine learning system** that can:
+- Understand **questions in English**
+- Extract the correct **answer from a given context**
+- And finally, **translate that answer into another language (Hindi)**
 
-## Task Specifics
+This system, I integrated multiple NLP components into one pipeline.
 
-- **Understanding the Problem:** Before you dive into designing the system, it's crucial to have a good understanding of the problem statement. Review the tasks from A to C and the resources provided to form a solid foundation.
+---
 
-- **Incorporate Knowledge:** Task D is where you bring together everything you've learned. You can use the word embeddings created in Task A, explore machine translation techniques from Task B, and implement question-answering systems from Task C. This is where the magic happens.
+## System Design
 
-- **Open-Ended Design:** This is a design question, meaning there's no one "correct" answer. You have the creative freedom to design your machine learning system the way you see fit. Explain your design choices and the reasoning behind them in detail. The more creative the better!
+### 🔹 1. Components Used
+- **Question Answering (QA) Model** – [`deepset/roberta-base-squad2`](https://huggingface.co/deepset/roberta-base-squad2)  
+  - Was Trained on **SQuAD 2.0**, is capable of answering context-based English questions, including unanswerable ones.
+  - I found this from Huggig face model hub
 
-- **Documentation:** Your README should be well-structured and include explanations of your system's architecture, algorithms, models, and any other components. Provide clear, step-by-step instructions on how to use and evaluate your system. Please keep the documentation concise and in bullet points, we don't want bloated ChatGPT text.
+- **Translation Model** – [`Helsinki-NLP/opus-mt-en-hi`](https://huggingface.co/Helsinki-NLP/opus-mt-en-hi)  
+  - Used for **English → Hindi** translation.
+  - I found this in HF model hub as well. For French you can replace this model with `opus-mt-en-fr`. 
 
-- **Demonstration:** Consider providing examples of how your system performs, including sample English questions and their corresponding French answers.
+---
 
-- **Balancing Theory and Implementation:** While the focus is on design, a good design should be well-informed by theory and practically implementable. Strike a balance between the two.
+### 🔹 2. Architecture
 
-## Questions and Support
+            ┌──────────────────────────────┐
+            │  English Question + Context  │
+            └──────────────┬───────────────┘
+                           │
+                           ▼
+                QA Model (RoBERTa-SQuAD2)
+                           │
+                  English Answer (Text)
+                           │
+                           ▼
+              Translation Model (en → hi)
+                           │
+                           ▼
+                    Hindi Answer Output
 
-If you have any questions, need clarifications, or encounter challenges, feel free to reach out to the group. We encourage active discussion and knowledge-sharing among the participants.
+---
 
-## Submission
+### 🔹 3. Summary of the Architecture
+1. Take an English **question** and **context paragraph**.  
+2. Use the QA model to **extract the answer** from the context.  
+3. Feed the English answer to the translation model.  
+4. Output the **translated answer** in Hindi.  
 
-When you're ready to submit your solution for Task D, make sure to include all relevant documentation and code. Organize your repository to make it easy for reviewers to understand your design and implementations. You can submit multiple times and make improvements to your system as time progresses. You can have multiple systems as well! Feel free to try out everything! Don't wait until the last minute to start this task. Give yourself ample time to explore, design, implement, and document your system. 
+---
 
-Good luck, and enjoy the journey of designing your own machine learning system! 🚀
+## Implementation
+
+### Notebook File
+> `Task_D_QuestionAnswering_and_Translation.ipynb`
+
+This notebook contains:
+- Step-by-step setup and explanations.
+- Demonstrations with sample inputs and outputs.
+- Function `get_hindi_answer(question, context)` that performs the entire workflow.
+
+---
+
+### 🔧 Requirements
+To run the notebook, install:
+```bash
+pip install transformers torch sentencepiece
