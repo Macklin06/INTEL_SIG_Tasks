@@ -1,60 +1,38 @@
-# Intelligence SIG Recruitment 2025
+# WEC Intel SIG Recruitment Tasks – Submission by Macklin Miranda
 
-Welcome to the Intelligence Special Interest Group recruitment repository! We're excited to have you here. This repository contains various challenges designed to test your problem-solving abilities and coding skills.
+This repository contains my completed solutions for the **WEC Intel SIG Recruitment Tasks** as part of the recruitment process.  
+It includes implementations for the **Mandatory Tasks (1 and 2)**, as well as one **Non-Mandatory Task**.
 
-## Application Requirements
+---
 
-- Complete the **mandatory tasks**
-- Complete **at least one** non-mandatory task
-- All solutions must be your original work
+## Repository Overview
 
-## Instructions
+### Mandatory Tasks
 
-1. **Fork the Repository**
-   - Click the "Use this template" button at the top right of this repository
-   - This creates your personal copy of the challenges to work on
+#### **Task 1 – Question Answering System**
+This task focused on building a **Closed and Extractive Question Answering (QA) model** that provides answers based on a given context.
 
-2. **Solve the Problems**
-   - Navigate through the repository and find the questions
-   - Complete the mandatory task
-   - Choose and complete at least one non-mandatory task
-   - Write clean, well-documented code
-   - Make sure your solutions are original and working
+**Completed Sections:**
+- **Part A:** Data loading, preprocessing, and tokenization. Did word embeddings using Word2Vec Skipgram model of gensim library.  
+- **Part B:** Built Translation System using pre-trained transformer model (`Helsinki-NLP/opus-mt-en-hi`).  
+- **Finale:** End-to-end QA pipeline using a pre-trained transformer model (`deepset/roberta-base-squad2`).
 
-3. **Submit Your Work**
-   - Place your solution files in the exact same folder where the corresponding question is located
-   - Ensure your code follows the specified format and requirements
-   - Test your solutions thoroughly before submission
+---
 
-4. **Add Collaborators**
-   - Go to your forked repository's "Settings" > "Collaborators"
-   - Add the following GitHub IDs:
-     - Bhuvanesh-Singla
-     - S0urTamarind
-     - falconakhil
-     - saketjha34
-     - KaushikNITK
-     - PranavBhatP
-     - Pranav-Vinodh
-     - GamerDra
-     - swrjsingh
-     - Vanshika-Mittal
-     - vishruth2005
-5. **Fill IRIS Form**
-   - Fill the following before deadline: [Form](https://iris.nitk.ac.in/form/webclubintel2025)
+#### **Task 2 – Machine Learning System Design**
+Used pandas, loaded a dataframe using kaggel dataset, wrote a model/function, predicted and visualized the outputs.
 
+---
 
-## Important Notes
+### Non-Mandatory Task
 
-- Make sure to test your code thoroughly before submission
-- Document your code appropriately
-- Plagiarism will result in immediate disqualification
-- Keep your repository private until submission
-- Follow all instructions exactly as specified in each task
-- If you have any kaggle notebooks, make them public before the deadline and add links to those notebooks in the respective folders.
+#### **Semantic Similarity**
+Implemented a semantic similarity pipeline that measures similarity between image datasets.
 
-## Questions?
+---
 
-If you have any questions or face technical difficulties, feel free to open an issue in this repository. You can always reach out to any of us in case of any doubts.
+## 🧰 Tools & Technologies Used
 
-Good luck! We look forward to seeing your creative solutions! 🚀
+- **Python 3.10+**
+- **Hugging Face Transformers**
+- **Google Colab / Jupyter Notebook**
