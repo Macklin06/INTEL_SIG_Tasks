@@ -1,4 +1,4 @@
-# WEC Intel SIG Recruitment Tasks – Submission by Macklin Miranda
+# WEC Intel SIG Recruitment Tasks – Submission by Macklin Chriss Miranda (241MN027)
 
 This repository contains my completed solutions for the **WEC Intel SIG Recruitment Tasks** as part of the recruitment process.  
 It includes implementations for the **Mandatory Tasks (1 and 2)**, as well as one **Non-Mandatory Task**.
